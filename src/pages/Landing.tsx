@@ -323,6 +323,53 @@ const Landing = () => {
           </div>
         </div>
       </div>
+
+      {/* footer */}
+      <div className="flex items-center justify-center px-4 py-2">
+        <div>
+          <div>
+            <h1 className="text-3xl font-bold text-primary">Make your resume work harder.</h1>
+            <p className="text-sm font-light text-secondary">
+              Get clear, AI-powered insights and improve your resume with confidence.
+            </p>
+          </div>
+
+          <div className="mt-6 flex items-center justify-center">
+            <button className="px-4 py-2 bg-special font-bold font-white">Analyze My Resume</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between px-10 mt-10">
+        <div>
+          <h1 className="text-lg font-bold text-primary">ResumeLens</h1>
+          <p className="text-sm font-light text-secondary">See your resume through an AI lens.</p>
+        </div>
+
+        <div className="flex items-center justify-center gap-4">
+          <a href="#" className="text-sm font-light text-secondary hover:text-primary">
+            Features
+          </a>
+
+          <a href="#" className="text-sm font-light text-secondary hover:text-primary">
+            How It Works
+          </a>
+
+          <a href="#" className="text-sm font-light text-secondary hover:text-primary">
+            Pricing
+          </a>
+
+          <a href="#" className="text-sm font-light text-secondary hover:text-primary">
+            Sign In
+          </a>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-center py-6">
+        <div>
+          <p className="text-sm font-light text-secondary">© 2026 ResumeLens. All rights reserved.</p>
+        </div>
+      </div>
     </div>
   );
 }
