@@ -8,6 +8,8 @@ import {
   ProgressValue,
 } from "@/components/ui/progress"
 
+import Activity_card from './Activity_card';
+
 
 const Dashbord_comp = () => {
   return (
@@ -135,8 +137,8 @@ const Dashbord_comp = () => {
         </div>
 
         {/* progress */}
-        <div className="flex-3">
-          <div className=" px-3 py-1">
+        <div className="flex-3 flex items-start justify-start">
+          <div className="px-3 py-1">
             <div className="flex items-center justify-between">
               <div>
                 <h1 className="text-primary font-bold text-lg capitalize">
@@ -158,30 +160,78 @@ const Dashbord_comp = () => {
             </div>
 
             <div className="mt-6 flex flex-col gap-3 px-4 py-2">
-                {/* first progress */}
-                <div>
-                  <Progress value={56} className="w-full max-w-sm">
-                    <ProgressLabel>Formatting & Structure</ProgressLabel>
-                    <ProgressValue />
-                  </Progress>
-                </div>
-
-                {/* second progress */}
-                <div>
-                  <Progress value={80} className="w-full max-w-sm">
-                    <ProgressLabel>Keyword Density</ProgressLabel>
-                    <ProgressValue />
-                  </Progress>
-                </div>
-
-                {/* third progress */}
-                <div>
-                  <Progress value={90} className="w-full max-w-sm">
-                    <ProgressLabel>Action Verbs & Impact</ProgressLabel>
-                    <ProgressValue />
-                  </Progress>
-                </div>
+              {/* first progress */}
+              <div>
+                <Progress value={56} className="w-full max-w-sm">
+                  <ProgressLabel>Formatting & Structure</ProgressLabel>
+                  <ProgressValue />
+                </Progress>
               </div>
+
+              {/* second progress */}
+              <div>
+                <Progress value={80} className="w-full max-w-sm">
+                  <ProgressLabel>Keyword Density</ProgressLabel>
+                  <ProgressValue />
+                </Progress>
+              </div>
+
+              {/* third progress */}
+              <div>
+                <Progress value={90} className="w-full max-w-sm">
+                  <ProgressLabel>Action Verbs & Impact</ProgressLabel>
+                  <ProgressValue />
+                </Progress>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* profile and recent activity */}
+      <div className='flex items-center justify-start gap-3'>
+        {/* profile */}
+        <div className='flex-2 w-full h-full flex flex-col items-center justify-center px-4 py-1'>
+          <div className="relative">
+            <div className="bg-blue-700 p-4 rounded-full text-white font-bold">AC</div>
+            <div className="bg-green-400 rounded-full w-3 h-3 absolute bottom-0 right-1"></div>
+          </div>
+          <div className="text-center">
+            <h2 className="font-bold text-primary text-lg">Alex Chen</h2>
+            <p className="text-xs font-light text-secondary">alex.chen@example.com</p>
+          </div>
+          <div className='grid grid-cols-3 gap-5 mt-3'>
+            <div className="text-center">
+              <h2 className="font-bold text-primary text-lg">5</h2>
+              <p className="text-xs font-light text-secondary">Resumes</p>
+            </div>
+
+            <div className="text-center">
+              <h2 className="font-bold text-primary text-lg">4</h2>
+              <p className="text-xs font-light text-secondary">Analyses</p>
+            </div>
+
+            <div className="text-center">
+              <h2 className="font-bold text-primary text-lg">8</h2>
+              <p className="text-xs font-light text-secondary">Insights</p>
+            </div>
+          </div>          
+        </div>
+        {/* recent activity */}
+        <div className='flex-5 px-3 py-1 '>
+          <div>
+            <h1 className='text-primary font-semibold text-lg'>Recent Activity</h1>
+            <p className='text-secondary font-light text-xs'>Audit trail of algorithmic evaluations and content iterations</p>
+          </div>
+
+          <div>
+            <Activity_card title="Analysis completed — Senior Frontend Engineer Resume (V4)" description="Score increased to 86. Resolved 3 keyword omissions." timestamp="2 hours ago"/>
+
+            <Activity_card title="Analysis completed — Senior Frontend Engineer Resume (V3)" description="Score increased to 78. Resolved 2 formatting issues." timestamp="1 day ago"/>
+
+            <Activity_card title="Analysis completed — Senior Frontend Engineer Resume (V2)" description="Score increased to 72. Resolved 1 keyword omission." timestamp="3 days ago"/>
+
+            <Activity_card title="Analysis completed — Senior Frontend Engineer Resume (V1)" description="Initial analysis completed. Score: 65." timestamp="1 week ago"/>
           </div>
         </div>
       </div>

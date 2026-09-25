@@ -64,7 +64,7 @@ export function ChartLineLabelCustom({title, description,footerHeader,footerDesc
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-lg text-primary font-bold">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
