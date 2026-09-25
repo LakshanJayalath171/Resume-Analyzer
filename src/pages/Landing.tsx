@@ -258,7 +258,7 @@ const Landing = () => {
               <div className="flex items-center justify-center">
                 <div className="flex items-center justify-center p-3 rounded-full bg-gray-500/50 mt-2">
                   <img
-                    src="../../public/icons/upload.png"
+                    src="/icons/upload.png"
                     className="w-12 h-12"
                   />
                 </div>
@@ -282,7 +282,7 @@ const Landing = () => {
               <div className="flex items-center justify-center">
                 <div className="flex items-center justify-center p-3 rounded-full bg-gray-500/50 mt-2">
                   <img
-                    src="../../public/icons/analyze.png"
+                    src="/icons/analyze.png"
                     className="w-12 h-12"
                   />
                 </div>
@@ -307,7 +307,7 @@ const Landing = () => {
               <div className="flex items-center justify-center">
                 <div className="flex items-center justify-center p-3 rounded-full bg-gray-500/50 mt-2">
                   <img
-                    src="../../public/icons/improve.png"
+                    src="/icons/improve.png"
                     className="w-12 h-12"
                   />
                 </div>
