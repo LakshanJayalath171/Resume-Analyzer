@@ -1,7 +1,4 @@
-"use client"
-
-import { TrendingUp } from "lucide-react"
-import { CartesianGrid, LabelList, Line, LineChart } from "recharts"
+import { CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts"
 
 import {
   Card,
@@ -21,46 +18,54 @@ import {
 export const description = "A line chart with a custom label"
 
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
+  { version: "v1", score: 71 },
+  { version: "v2", score: 65 },
+  { version: "v3", score: 82 },
+  { version: "v4", score: 78 },
+  { version: "v5", score: 60 },
 ]
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
-    color: "var(--chart-2)",
+  score: {
+    label: "score",
+    color: "#3b82f6",
   },
-  chrome: {
-    label: "Chrome",
+  v1: {
+    label: "v1",
     color: "var(--chart-1)",
   },
-  safari: {
-    label: "Safari",
+  v2: {
+    label: "v2",
     color: "var(--chart-2)",
   },
-  firefox: {
-    label: "Firefox",
+  v3: {
+    label: "v3",
     color: "var(--chart-3)",
   },
-  edge: {
-    label: "Edge",
+  v4: {
+    label: "v4",
     color: "var(--chart-4)",
   },
-  other: {
-    label: "Other",
+  v5: {
+    label: "v5",
     color: "var(--chart-5)",
   },
 } satisfies ChartConfig
 
-export function ChartLineLabelCustom() {
+
+interface ChartLineLabelCustomProps {
+  title:string
+  description:string
+  footerHeader:string
+  footerDescription:string
+}
+
+export function ChartLineLabelCustom({title, description,footerHeader,footerDescription}:ChartLineLabelCustomProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Line Chart - Custom Label</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -74,23 +79,29 @@ export function ChartLineLabelCustom() {
             }}
           >
             <CartesianGrid vertical={false} />
+            <XAxis
+              dataKey="version"
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+            />
             <ChartTooltip
               cursor={false}
               content={
                 <ChartTooltipContent
                   indicator="line"
-                  nameKey="visitors"
+                  nameKey="score"
                   hideLabel
                 />
               }
             />
             <Line
-              dataKey="visitors"
+              dataKey="score"
               type="natural"
-              stroke="var(--color-visitors)"
+              stroke="var(--color-score)"
               strokeWidth={2}
               dot={{
-                fill: "var(--color-visitors)",
+                fill: "var(--color-score)",
               }}
               activeDot={{
                 r: 6,
@@ -101,7 +112,7 @@ export function ChartLineLabelCustom() {
                 offset={12}
                 className="fill-foreground"
                 fontSize={12}
-                dataKey="browser"
+                dataKey="version"
                 formatter={(value) =>
                   chartConfig[value as keyof typeof chartConfig]?.label
                 }
@@ -112,10 +123,10 @@ export function ChartLineLabelCustom() {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+          {footerHeader}
         </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+        <div className="text-purple font-bold">
+          {footerDescription}
         </div>
       </CardFooter>
     </Card>
