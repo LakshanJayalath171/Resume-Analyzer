@@ -94,25 +94,25 @@ const Landing = () => {
 
             <div className="flex flex-col mt-3 gap-2">
               <div>
-              <Progress value={56} className="w-full max-w-sm">
-                <ProgressLabel>Format & Parsing</ProgressLabel>
-                <ProgressValue />
-              </Progress>
-            </div>
+                <Progress value={56} className="w-full max-w-sm">
+                  <ProgressLabel>Format & Parsing</ProgressLabel>
+                  <ProgressValue />
+                </Progress>
+              </div>
 
-            <div>
-              <Progress value={81} className="w-full max-w-sm " >
-                <ProgressLabel>Keywords & Skills</ProgressLabel>
-                <ProgressValue />
-              </Progress>
-            </div>
+              <div>
+                <Progress value={81} className="w-full max-w-sm ">
+                  <ProgressLabel>Keywords & Skills</ProgressLabel>
+                  <ProgressValue />
+                </Progress>
+              </div>
 
-            <div>
-              <Progress value={70} className="w-full max-w-sm">
-                <ProgressLabel>Structural Impact</ProgressLabel>
-                <ProgressValue />
-              </Progress>
-            </div>
+              <div>
+                <Progress value={70} className="w-full max-w-sm">
+                  <ProgressLabel>Structural Impact</ProgressLabel>
+                  <ProgressValue />
+                </Progress>
+              </div>
             </div>
           </div>
         </div>
@@ -126,7 +126,8 @@ const Landing = () => {
           <div className="mt-2">
             <h1 className="text-purple font-bold">AI Insights</h1>
             <p className="font-light text-secondary">
-              Identify strengths, weaknesses, formatting issues, and clarity problems.
+              Identify strengths, weaknesses, formatting issues, and clarity
+              problems.
             </p>
           </div>
 
@@ -139,10 +140,9 @@ const Landing = () => {
             <div className="flex items-center justify-center px-3 py-1 bg-orange-400/50">
               <p className="text-xs font-light">CLARITY ALERT</p>
             </div>
-
           </div>
 
-           <div className="flex items-center justify-between mt-4">
+          <div className="flex items-center justify-between mt-4">
             <div className="flex items-center justify-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full"></div>
               <p className="">Standard Font Hierarchy</p>
@@ -151,7 +151,6 @@ const Landing = () => {
             <div className="flex items-center justify-center px-3 py-1 bg-green-400/50">
               <p className="text-xs font-light">FORMATTING CHECK: PASSED</p>
             </div>
-
           </div>
         </div>
 
@@ -170,16 +169,30 @@ const Landing = () => {
           </div>
 
           <div className="mt-6">
-            <p className="font-light text-secondary capitalize">Detected vs. Target Match</p>
+            <p className="font-light text-secondary capitalize">
+              Detected vs. Target Match
+            </p>
 
             <div className="grid grid-cols-3 mt-2 gap-1">
-              <div className="bg-green-500/20 border-dashed border-2 border-green-400 px-4 py-1 rounded-full flex items-center gap-2 text-green-800"><Check size={12} className="text-green-800"/>Kubernetes</div>
+              <div className="bg-green-500/20 border-dashed border-2 border-green-400 px-4 py-1 rounded-full flex items-center gap-2 text-green-800">
+                <Check size={12} className="text-green-800" />
+                Kubernetes
+              </div>
 
-              <div className="bg-green-500/20 border-dashed border-2 border-green-400 px-4 py-1 rounded-full flex items-center gap-2 text-green-800"><Check size={12} className="text-green-800"/>GraphQL</div>
+              <div className="bg-green-500/20 border-dashed border-2 border-green-400 px-4 py-1 rounded-full flex items-center gap-2 text-green-800">
+                <Check size={12} className="text-green-800" />
+                GraphQL
+              </div>
 
-              <div className="bg-red-500/20 border-dashed border-2 border-red-400 px-4 py-1 rounded-full flex items-center gap-2 text-red-800"><Plus size={12} className="text-red-800"/>System Architecture</div>
+              <div className="bg-red-500/20 border-dashed border-2 border-red-400 px-4 py-1 rounded-full flex items-center gap-2 text-red-800">
+                <Plus size={12} className="text-red-800" />
+                System Architecture
+              </div>
 
-              <div className="bg-red-500/20 border-dashed border-2 border-red-400 px-4 py-1 rounded-full flex items-center gap-2 text-red-800"><Plus size={12} className="text-red-800"/>CI/CD</div>
+              <div className="bg-red-500/20 border-dashed border-2 border-red-400 px-4 py-1 rounded-full flex items-center gap-2 text-red-800">
+                <Plus size={12} className="text-red-800" />
+                CI/CD
+              </div>
             </div>
           </div>
         </div>
@@ -188,7 +201,10 @@ const Landing = () => {
 
         <div className="px-6 py-3 rounded-2xl bg-gray-600/20">
           <div>
-            <img src="../../public/icons/ai_rewrites.png" className="w-12 h-12" />
+            <img
+              src="../../public/icons/ai_rewrites.png"
+              className="w-12 h-12"
+            />
           </div>
 
           <div>
@@ -207,10 +223,102 @@ const Landing = () => {
             </div>
 
             <div className="px-3 py-1 rounded-lg border-l-4 border-dotted border-red-500 mt-2">
-              <p className="text-lg text-green-500 font-bold">After (AI Optimized)</p>
-              <p className="text-sm font-light text-secondary">
-                "Spearheaded redesign of web platform, boosting visitor conversion by 34%."
+              <p className="text-lg text-green-500 font-bold">
+                After (AI Optimized)
               </p>
+              <p className="text-sm font-light text-secondary">
+                "Spearheaded redesign of web platform, boosting visitor
+                conversion by 34%."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* imrove section */}
+      <div className="flex items-center justify-center text-center p-10 mt-10">
+        <div>
+          <div>
+            <h1 className="text-3xl font-bold text-primary">
+              Improve your resume in three steps.
+            </h1>
+            <p className="text-sm font-light text-secondary">
+              Fast, automated, and built for modern hiring standards.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 justify-center gap-6">
+            {/* first card */}
+            <div className="py-3 mt-4">
+              <div className="flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-200 text-special rounded-full text-lg font-bold">
+                  01
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center p-3 rounded-full bg-gray-500/50 mt-2">
+                  <img
+                    src="../../public/icons/upload.png"
+                    className="w-12 h-12"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-semibold text-primary">UPLOAD</h2>
+                <p className="text-sm font-light text-secondary">
+                  Upload your resume as a PDF.
+                </p>
+              </div>
+            </div>
+
+            {/* second card */}
+            <div className="py-3 mt-4">
+              <div className="flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-200 text-special rounded-full text-lg font-bold">
+                  02
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center p-3 rounded-full bg-gray-500/50 mt-2">
+                  <img
+                    src="../../public/icons/analyze.png"
+                    className="w-12 h-12"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-semibold text-primary">ANALYZE</h2>
+                <p className="text-sm font-light text-secondary">
+                  ResumeLens analyzes your resume with AI.
+                </p>
+              </div>
+            </div>
+
+            {/* third card */}
+
+            <div className="py-3 mt-4">
+              <div className="flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-200 text-special rounded-full text-lg font-bold">
+                  03
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center p-3 rounded-full bg-gray-500/50 mt-2">
+                  <img
+                    src="../../public/icons/improve.png"
+                    className="w-12 h-12"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-semibold text-primary">Improve</h2>
+                <p className="text-sm font-light text-secondary">
+                  Get actionable insights, keyword recommendations, and AI rewrites.
+                </p>
+              </div>
             </div>
           </div>
         </div>
