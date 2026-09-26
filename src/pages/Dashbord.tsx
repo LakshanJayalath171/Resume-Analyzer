@@ -12,7 +12,7 @@ const Dashbord = () => {
     const [selectedMenu, setSelectedMenu] = useState('Dashboard');
     
   return (
-    <div className="flex items-start justify-start w-screen h-screen">
+    <div className="flex items-start justify-start w-screen h-screen overflow-hidden">
         {/* sidebar */}
         <div className="flex-1 px-4 py-3">
             <div className="flex items-center gap-2">
@@ -34,11 +34,11 @@ const Dashbord = () => {
         </div>
 
         {/* content */}
-        <div className="flex-4">
+        <div className="flex-4 min-w-0 min-h-0 h-full flex flex-col">
             {/* navbar section */}
             <div className="flex items-center justify-between px-4 py-2">
                 <div>
-                    <div className="flex items-center gap-2 bg-gray-400/50 px-4 py-1 rounded-full">
+                    <div className="flex items-center gap-2 text-xs bg-gray-400/50 px-4 py-1 rounded-full">
                         <p>✨AI Engine v2.4 Active</p>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ const Dashbord = () => {
             </div>
 
             {/* content */}
-            <div className='w-full h-full overflow-x-auto'>
+            <div className='w-full flex-1 min-h-0 overflow-y-auto'>
                 {selectedMenu === 'Dashboard' && <div><Dashbord_comp/></div>}
                 {selectedMenu === 'Analyze Resume' && <div><Analyze/></div>}
                 {selectedMenu === 'My Resume' && <div><My_resume/></div>}

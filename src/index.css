@@ -147,9 +147,6 @@ body {
     color 200ms ease;
 }
 
-* {
-  border-color: var(--border);
-}
 
 /* =========================================================
    BACKGROUND
