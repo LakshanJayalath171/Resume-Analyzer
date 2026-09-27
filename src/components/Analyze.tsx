@@ -33,7 +33,7 @@ const Analyze = () => {
     setError('');
   };
 
-  console.log('Selected file:', selectedFile);
+  
   return (
     <div className="px-6 py-2">
       {/* heading */}
