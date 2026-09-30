@@ -24,9 +24,6 @@ const Dashbord = () => {
                 <Sidebar_card selectedText={selectedMenu} icon={<Grid2x2Plus size={20}  />} text="Dashboard" setSelectedMenu={setSelectedMenu} />
 
                 <Sidebar_card selectedText={selectedMenu} icon={<FileText size={20}  />} text="Analyze Resume" setSelectedMenu={setSelectedMenu} />
-
-                <Sidebar_card selectedText={selectedMenu} icon={<FolderOpen size={20}  />} text="My Resume" setSelectedMenu={setSelectedMenu} />
-
                 <Sidebar_card selectedText={selectedMenu} icon={<RotateCwFadingClock size={20} />} text="Resume Versions" setSelectedMenu={setSelectedMenu} />
 
                 <Sidebar_card selectedText={selectedMenu} icon={<ChartNoAxesCombined size={20}  />} text="Insight" setSelectedMenu={setSelectedMenu}/>
@@ -53,7 +50,6 @@ const Dashbord = () => {
             <div className='w-full flex-1 min-h-0 overflow-y-auto'>
                 {selectedMenu === 'Dashboard' && <div><Dashbord_comp/></div>}
                 {selectedMenu === 'Analyze Resume' && <div><Analyze/></div>}
-                {selectedMenu === 'My Resume' && <div><My_resume/></div>}
                 {selectedMenu === 'Resume Versions' && <div><Versions/></div>}
                 {selectedMenu === 'Insight' && <div><Insight/></div>}
             </div>
