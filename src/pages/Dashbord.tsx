@@ -48,7 +48,7 @@ const Dashbord = () => {
 
             {/* content */}
             <div className='w-full flex-1 min-h-0 overflow-y-auto'>
-                {selectedMenu === 'Dashboard' && <div><Dashbord_comp/></div>}
+                {selectedMenu === 'Dashboard' && <div><Dashbord_comp setSelectedTab={setSelectedMenu}/></div>}
                 {selectedMenu === 'Analyze Resume' && <div><Analyze/></div>}
                 {selectedMenu === 'Resume Versions' && <div><Versions/></div>}
                 {selectedMenu === 'Insight' && <div><Insight/></div>}

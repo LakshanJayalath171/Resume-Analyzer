@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LockKeyhole , FileText, Verified , Trash, File , WandSparkles} from 'lucide-react';
+import { LockKeyhole , FileText, Verified , Trash, File , WandSparkles, FileUp} from 'lucide-react';
 
 
 const Analyze = () => {
@@ -212,7 +212,10 @@ const Analyze = () => {
       </div>
 
       <div className="w-full h-full flex items-center justify-end mt-6">
-        <div>
+        <div className="flex items-center justify-center gap-3">
+
+          <button className='px-4 py-2 flex items-center justify-center gap-3 rounded-2xl text-white font-bold btn-secondary'><FileUp size={16} className="text-special" />Upload Resume</button>
+
           <button className='px-4 py-2 flex items-center justify-center gap-3 rounded-2xl text-white font-bold bg-special'><WandSparkles size={16} className="text-white" />Analyze Resume</button>
         </div>
       </div>

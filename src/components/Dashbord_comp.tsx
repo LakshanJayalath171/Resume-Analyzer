@@ -11,7 +11,7 @@ import {
 import Activity_card from './Activity_card';
 
 
-const Dashbord_comp = () => {
+const Dashbord_comp = ({setSelectedTab}) => {
   return (
     <div className="w-full h-full px-4 py-2 flex flex-col gap-4">
       {/* heading section */}
@@ -29,11 +29,11 @@ const Dashbord_comp = () => {
         </div>
 
         <div className="flex items-center justify-center gap-2">
-          <button className="bg-special px-4 py-3 rounded-full text-white text-sm flex items-center justify-center gap-3">
+          <button onClick={()=>setSelectedTab('Analyze Resume')} className="bg-special px-4 py-3 rounded-full text-white text-sm flex items-center justify-center gap-3">
             <FileUp />
             Upload Resume
           </button>
-          <button className="px-4 py-3 btn-secondary flex items-center justify-center gap-3">
+          <button onClick={()=>setSelectedTab('Analyze Resume')} className="px-4 py-3 btn-secondary flex items-center justify-center gap-3">
             <WandSparkles /> Analyze Resume
           </button>
         </div>

@@ -13,6 +13,7 @@ import { toast } from "react-toastify";
 
 import {useNavigate} from "react-router-dom";
 import { useAuth } from "@clerk/react";
+import { useAppContext } from "@/context/AppContext";
 
 const Landing = () => {
   const navigate = useNavigate();
