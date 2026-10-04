@@ -1,6 +1,11 @@
 import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/react"
+import { useNavigate } from "react-router-dom";
+
+
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <nav className="flex items-center justify-between px-10 py-4">
       <div className="flex items-center gap-2">
@@ -36,6 +41,9 @@ const Navbar = () => {
         </Show>
         <Show when="signed-in">
           <UserButton />
+          <button onClick={()=>navigate("/dashboard")} className="text-sm font-medium text-primary btn-secondary px-4 py-2 rounded-lg">
+            Dashbord
+          </button>
         </Show>
       </div>
     </nav>

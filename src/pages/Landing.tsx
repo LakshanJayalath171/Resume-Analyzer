@@ -1,14 +1,31 @@
 import Navbar from "../components/Navbar"
 import { WandSparkles ,Check , Plus} from 'lucide-react';
 
+
 import {
   Progress,
   ProgressLabel,
   ProgressValue,
 } from "@/components/ui/progress"
 
+import { toast } from "react-toastify";
+
+
+import {useNavigate} from "react-router-dom";
+import { useAuth } from "@clerk/react";
 
 const Landing = () => {
+  const navigate = useNavigate();
+  const { isSignedIn } = useAuth();
+
+  const navigation = () => {
+    if (isSignedIn) {
+      navigate("/dashboard");
+    } else {
+      toast.info("Please sign in to analyze your resume.");
+    }
+  };
+
   return (
     <div>
       <Navbar />
@@ -38,7 +55,7 @@ const Landing = () => {
 
           {/* analyze button */}
           <div className="flex items-center justify-center gap-4 mt-6">
-            <button className="flex items-center justify-center gap-2 px-4 py-2 bg-special text-white rounded-full">
+            <button onClick={()=>navigation()} className="flex items-center justify-center gap-2 px-4 py-2 bg-special text-white rounded-full">
               <WandSparkles size={20} />
               Analyze My Resume
             </button>
@@ -335,7 +352,7 @@ const Landing = () => {
           </div>
 
           <div className="mt-6 flex items-center justify-center">
-            <button className="px-4 py-2 bg-special font-bold font-white">Analyze My Resume</button>
+            <button onClick={()=>navigation()} className="px-4 py-2 bg-special font-bold font-white">Analyze My Resume</button>
           </div>
         </div>
       </div>
