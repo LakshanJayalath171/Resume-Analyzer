@@ -1,12 +1,55 @@
-import { useState } from 'react';
-import { LockKeyhole , FileText, Verified , Trash, File , WandSparkles, FileUp} from 'lucide-react';
+import { useState } from "react";
+import {
+  LockKeyhole,
+  FileText,
+  Verified,
+  Trash,
+  File,
+  WandSparkles,
+  FileUp,
+} from "lucide-react";
+import { useUser } from "@clerk/react";
 
+import { toast } from "react-toastify";
+import { useAppContext } from "@/context/AppContext";
 
 const Analyze = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [error, setError] = useState('');
-  const [jobDescription, setJobDescription] = useState('');
+  const [error, setError] = useState("");
+  const [jobDescription, setJobDescription] = useState("");
+
+  const { user } = useUser();
+  const { axios } = useAppContext();
+
+  // upload resume to the server
+  const handleUpload = async () => {
+    const data = {
+      user_id: user?.id,
+      resume: selectedFile,
+    };
+
+    if (!selectedFile) {
+      toast.error("Please select a file to upload.");
+      return;
+    }
+    try {
+      const data = new FormData();
+      data.append("resume", selectedFile as File);
+      data.append("user_id", user?.id as string);
+
+      const response = await axios.post("/api/resume/upload", data);
+      
+      if (response.data.success) {
+        toast.success(response.data.message);
+        setSelectedFile(null);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   const wordCount = jobDescription.trim()
     ? jobDescription.trim().split(/\s+/).length
@@ -17,23 +60,22 @@ const Analyze = () => {
   const handleFile = (file?: File) => {
     if (!file) return;
 
-    if (file.type !== 'application/pdf') {
+    if (file.type !== "application/pdf") {
       setSelectedFile(null);
-      setError('Please select a PDF file.');
+      setError("Please select a PDF file.");
       return;
     }
 
     if (file.size > 5 * 1024 * 1024) {
       setSelectedFile(null);
-      setError('The file must be smaller than 5 MB.');
+      setError("The file must be smaller than 5 MB.");
       return;
     }
 
     setSelectedFile(file);
-    setError('');
+    setError("");
   };
 
-  
   return (
     <div className="px-6 py-2">
       {/* heading */}
@@ -202,7 +244,7 @@ const Analyze = () => {
           />
           <div className="flex items-center justify-between border-t border-gray-300 px-4 py-3">
             <p className="text-xs font-light text-secondary">
-              {wordCount} {wordCount === 1 ? 'word' : 'words'}
+              {wordCount} {wordCount === 1 ? "word" : "words"}
             </p>
             <p className="text-xs font-light text-secondary">
               Paste the full role for the most accurate analysis
@@ -213,14 +255,19 @@ const Analyze = () => {
 
       <div className="w-full h-full flex items-center justify-end mt-6">
         <div className="flex items-center justify-center gap-3">
+          <button onClick={handleUpload} className="px-4 py-2 flex items-center justify-center gap-3 rounded-2xl text-white font-bold btn-secondary">
+            <FileUp size={16} className="text-special" />
+            Upload Resume
+          </button>
 
-          <button className='px-4 py-2 flex items-center justify-center gap-3 rounded-2xl text-white font-bold btn-secondary'><FileUp size={16} className="text-special" />Upload Resume</button>
-
-          <button className='px-4 py-2 flex items-center justify-center gap-3 rounded-2xl text-white font-bold bg-special'><WandSparkles size={16} className="text-white" />Analyze Resume</button>
+          <button className="px-4 py-2 flex items-center justify-center gap-3 rounded-2xl text-white font-bold bg-special">
+            <WandSparkles size={16} className="text-white" />
+            Analyze Resume
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Analyze
+export default Analyze;
